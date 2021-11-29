@@ -2,6 +2,7 @@ let input = document.getElementById("input")
 let card = document.getElementById("card")
 let cardContainer = document.getElementById("card-container")
 let url = "https://pokeapi.co/api/v2/pokemon/"
+let fetchTypeUrl = "https://pokeapi.co/api/v2/pokemon-color/{id or name}/"
 let searchBtn = document.getElementById("search").addEventListener("click",(e)=>{
     e.preventDefault()
     fetchErryting()
