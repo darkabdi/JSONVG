@@ -15,15 +15,14 @@ async function fetchErryting(){
     let response =  await fetch(url+input.value)
     let data =      await response.json()
     console.log(data)
-    console.log(data.name)
-    console.log(data.abilities)
+    
     card.innerHTML += `<h2>${data.name}</h2>
     <img src=\"${data.sprites.front_default}" alt=""\>
-    <p>abilities</p>
-
-    
+    <p id="abilities" >abilities</p>
     `
-    
+    let abilities=document.getElementById("abilities").addEventListener("click",()=>{
+       card.innerHTML += `<li>${data.abilities[0]}</li>`
+    })
     cardContainer +=`<li>${card}</lil>`
    } catch (error) {
        console.log("error!")
