@@ -21,9 +21,9 @@ async function fetchName(){
     let response =  await fetch(url+input.value)
     let data =      await response.json()
     console.log(data)
-    card.innerHTML += `<h2>${data.name}</h2>
+    card.innerHTML = `<h2>${data.name}</h2>
     <img src=\"${data.sprites.front_default}" alt=""\>`
-    cardContainer +=`<li>${card}</lil>`
+    cardContainer = card
    } catch (error) {
        console.log("error!")
        card.innerHTML += `<p>this pokemon doesn't exist bruhh</p>`
@@ -36,9 +36,9 @@ async function fetchColour(){
         let response =  await fetch(`https://pokeapi.co/api/v2/pokemon-color/${input.value}/`)
         let data =      await response.json()
         console.log(data.pokemon_species)
-        let cardHTml = ""
+        cardHTml=""
         for (let poke of data.pokemon_species ){
-            cardHTml += `<h2>${poke.name}</h2>`
+            cardHTml = `<li>${poke.name}</li>`
             cardContainer.innerHTML +=cardHTml
         }
        console.log(poke.name)
